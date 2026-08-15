@@ -61,6 +61,47 @@
   addEventListener("resize", requestUpdate, { passive: true });
   update();
 
+  /* The hero Mac demos the product on loop: chaos → menu → cleaning mode → back. */
+  const mac = document.getElementById("mac");
+  if (mac) {
+    const passText = document.getElementById("mv-pass-text");
+    const gibberish = "fjdklsajflkdsaf";
+    const seq = [["a", 3400], ["b", 2200], ["c", 4000], ["d", 2600]];
+    let idx = 0, timer = null, typeTimer = null;
+    const typeGibberish = () => {
+      let i = 0;
+      mac.classList.remove("typed");
+      passText.textContent = "";
+      clearInterval(typeTimer);
+      typeTimer = setInterval(() => {
+        passText.textContent = gibberish.slice(0, ++i);
+        if (i >= gibberish.length) { clearInterval(typeTimer); mac.classList.add("typed"); }
+      }, 95);
+    };
+    const setState = (s) => {
+      mac.classList.remove("mac--a", "mac--b", "mac--c", "mac--d");
+      mac.classList.add("mac--" + s);
+      if (s === "a") typeGibberish();
+    };
+    if (reduced) {
+      setState("c");
+    } else {
+      const step = () => {
+        setState(seq[idx][0]);
+        timer = setTimeout(() => { idx = (idx + 1) % seq.length; step(); }, seq[idx][1]);
+      };
+      new IntersectionObserver((entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          if (!timer) step();
+        } else {
+          clearTimeout(timer);
+          clearInterval(typeTimer);
+          timer = null;
+        }
+      }, { threshold: 0.2 }).observe(mac);
+    }
+  }
+
   /* The ring works here too: press and hold three seconds, come back. */
   const unlock = document.getElementById("unlock");
   const note = document.getElementById("black-note");

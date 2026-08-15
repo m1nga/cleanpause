@@ -299,6 +299,181 @@ body::after {
   filter: blur(12px);
 }
 .hero-foot span { font-size: 9px; font-weight: 600; letter-spacing: .13em; }
+
+/* ---------- the product itself, on a Mac, demoing itself ---------- */
+
+.mac {
+  position: absolute;
+  z-index: 4;
+  right: 5vw;
+  bottom: calc(var(--rail-h) + 58px);
+  width: clamp(400px, 38vw, 560px);
+  container-type: inline-size;
+  filter: drop-shadow(0 34px 60px rgba(40,15,35,.42));
+}
+@media (min-width: 621px) and (max-width: 1280px) {
+  .s-four { min-height: 128svh; }
+}
+.mac-screen {
+  position: relative;
+  aspect-ratio: 1.58;
+  background: #0d070d;
+  border: 1px solid rgba(243,231,212,.34);
+  border-bottom: none;
+  border-radius: 2.6cqw 2.6cqw 0 0;
+  padding: 2.4cqw 2.4cqw 2.8cqw;
+}
+.mac-base {
+  position: relative;
+  width: 116%;
+  margin-left: -8%;
+  height: 2.4cqw;
+  background: linear-gradient(180deg, #2a1627 0%, #170c17 100%);
+  border: 1px solid rgba(243,231,212,.34);
+  border-radius: 3px 3px 10px 10px;
+}
+.mac-base::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  translate: -50% 0;
+  width: 13%;
+  height: 38%;
+  background: rgba(6,3,6,.8);
+  border-radius: 0 0 6px 6px;
+}
+.mac-view {
+  position: absolute;
+  inset: 2.4cqw 2.4cqw 2.8cqw;
+  border-radius: 1.2cqw;
+  overflow: hidden;
+  background: #120a12;
+}
+.mac-view > div { position: absolute; transition: opacity .75s ease; }
+
+.mac-menubar {
+  inset: 0 0 auto 0;
+  height: 8.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3.2%;
+  background: rgba(14,7,14,.5);
+  font-size: 1.7cqw;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: .1em;
+}
+.mac .mac-menubar { opacity: 1; }
+.mac--c .mac-menubar { opacity: 0; }
+.mac-menubar .mb-left { opacity: .45; letter-spacing: .06em; }
+.mac-menubar .mb-right { display: flex; align-items: center; gap: 1.4cqw; }
+.mac-menubar svg { width: 2cqw; height: 2cqw; }
+
+/* the wallpaper is this site's own color field */
+.mv-day {
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 74% 30%, rgba(232,80,58,.85) 0%, rgba(239,125,78,.5) 42%, transparent 78%),
+    radial-gradient(ellipse 80% 50% at 20% 80%, rgba(76,32,62,.9) 0%, rgba(126,53,91,.55) 48%, transparent 84%),
+    linear-gradient(180deg, #f2c46d 0%, #ed7d4e 34%, #b8496f 68%, #4c203e 100%);
+}
+.mv-pass {
+  left: 50%;
+  top: 52%;
+  translate: -50% -50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6cqw;
+  min-width: 46%;
+  padding: 3.4cqw 4cqw;
+  border: 1px solid rgba(243,231,212,.35);
+  background: rgba(26,11,24,.74);
+  text-align: center;
+}
+.mv-pass-label { font-size: 1.5cqw; font-weight: 600; letter-spacing: .22em; opacity: .6; }
+.mv-pass-text {
+  min-height: 3cqw;
+  font-size: 2.7cqw;
+  letter-spacing: .06em;
+  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.mv-pass-err { font-size: 1.7cqw; opacity: 0; transition: opacity .5s ease; }
+.mac.typed .mv-pass-err { opacity: .95; }
+
+.mv-menu {
+  top: 9.5%;
+  right: 2.6%;
+  display: flex;
+  flex-direction: column;
+  min-width: 34%;
+  border: 1px solid rgba(243,231,212,.24);
+  background: rgba(14,7,14,.82);
+  font-size: 1.9cqw;
+  line-height: 1;
+}
+.mv-menu span { padding: 2.2cqw 2.6cqw; opacity: .55; }
+.mv-menu .active { opacity: 1; background: rgba(76,32,62,.95); }
+
+.mv-black { inset: 0; background: #000; }
+.mv-black-copy {
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  translate: -50% -50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6cqw;
+  text-align: center;
+}
+.mv-black-copy strong { font-size: 4.6cqw; font-weight: 600; letter-spacing: -.03em; }
+.mv-black-copy em { font-size: 2.2cqw; opacity: .62; }
+.mv-ring {
+  position: absolute;
+  left: 50%;
+  bottom: 9%;
+  translate: -50% 0;
+  width: 7cqw;
+  height: 7cqw;
+}
+.mv-ring-arc {
+  stroke-dasharray: 81.7;
+  stroke-dashoffset: 81.7;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+.mac--c .mv-ring-arc { animation: mv-hold 3.4s linear forwards; }
+@keyframes mv-hold {
+  0% { stroke-dashoffset: 81.7; }
+  12% { stroke-dashoffset: 81.7; }
+  100% { stroke-dashoffset: 0; }
+}
+.mv-toast { inset: 0; }
+.mv-toast span {
+  position: absolute;
+  left: 50%;
+  bottom: 12%;
+  translate: -50% 0;
+  padding: 2cqw 3.6cqw;
+  border-radius: 1.4cqw;
+  background: rgba(0,0,0,.86);
+  font-family: "Newsreader", Georgia, serif;
+  font-style: italic;
+  font-size: 2.3cqw;
+  white-space: nowrap;
+}
+
+/* state machine: which layers are lit in each beat */
+.mv-day, .mv-pass, .mv-menu, .mv-black, .mv-toast { opacity: 0; }
+.mac--a .mv-day, .mac--a .mv-pass { opacity: 1; }
+.mac--b .mv-day, .mac--b .mv-menu { opacity: 1; }
+.mac--b .mv-pass { opacity: .35; }
+.mac--c .mv-black { opacity: 1; }
+.mac--d .mv-day { opacity: 1; }
+.mac--d .mv-toast { opacity: 1; }
 .steps {
   display: flex;
   align-items: center;
@@ -701,6 +876,12 @@ body::after {
   background: radial-gradient(ellipse, rgba(25,40,34,.5) 0%, rgba(25,40,34,.2) 58%, transparent 100%);
   filter: blur(20px);
 }
+.dl-icon {
+  display: block;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: 0 14px 34px rgba(10,5,10,.45);
+}
 .download-copy h2 {
   margin: 18px 0 30px;
   font-size: clamp(42px, 6.5vw, 86px);
@@ -1064,6 +1245,7 @@ a.sidecourt-head { text-decoration: none; }
 /* ---------- squat viewports (landscape phones, short laptops) ---------- */
 
 @media (min-width: 621px) and (max-height: 740px) {
+  .s-four { min-height: 138svh; }
   .s-six { min-height: 130svh; }
   .s-seven { min-height: 145svh; }
   .download-copy h2 { font-size: clamp(38px, 5vw, 64px); }
@@ -1089,12 +1271,19 @@ a.sidecourt-head { text-decoration: none; }
 
   .scene { padding: 82px 22px 42px; }
 
-  .s-four h1 { margin-top: 12vh; font-size: clamp(47px, 15vw, 72px); }
-  .sun { right: -28%; top: 22%; width: 78vw; }
+  .s-four { min-height: 136svh; }
+  .s-four h1 { margin-top: 9vh; font-size: clamp(45px, 14vw, 68px); }
+  .sun { right: -28%; top: 14%; width: 78vw; }
   .hero-sub { margin-top: 22px; }
   .hero-sub br { display: none; }
-  .hero-foot { bottom: calc(var(--rail-h) + 18px); }
-  .hero-foot > span { display: none; }
+  .mac {
+    right: auto;
+    left: 50%;
+    translate: -50% 0;
+    width: min(90vw, 430px);
+    bottom: calc(var(--rail-h) + 56px);
+  }
+  .hero-foot { bottom: calc(var(--rail-h) + 14px); }
   .steps { gap: 10px; }
   .steps span { font-size: 8px; }
   .steps i { width: 18px; }

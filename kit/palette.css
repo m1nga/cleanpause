@@ -1,0 +1,33 @@
+/* CleanPause / SIDE COURT — color tokens (late-court palette) */
+:root {
+  --ivory: #f3e7d4;       /* the only text color */
+  --chartreuse: #dceb55;  /* hold ring, progress, drop shadow — never text */
+
+  --cream-1: #f7e7c8;
+  --cream-2: #f7e0b7;
+  --ochre-1: #f2c46d;
+  --ochre-2: #efad58;
+
+  --sunset-1: #ed7d4e;
+  --sunset-2: #e45745;
+  --sunset-3: #e8503a;
+  --wine: #b8496f;
+  --plum: #4c203e;
+
+  --night-plum-1: #1b0b19;
+  --night-plum-2: #140a14;
+
+  --twilight-1: #39295f;
+  --twilight-2: #7351a0;
+  --twilight-3: #a4506e;
+  --twilight-4: #6f5b78;
+
+  --plant-1: #4e695e;
+  --plant-2: #405f55;
+  --plant-3: #29483e;
+  --plant-4: #192822;
+
+  --night-1: #181918;
+  --night-2: #231d2a;
+  --black: #000000;
+}

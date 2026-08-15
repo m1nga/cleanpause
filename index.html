@@ -61,13 +61,54 @@
       <h1>Clean your Mac.<br><em>Let nothing happen.</em></h1>
       <p class="hero-sub">CleanPause temporarily freezes the keyboard, media keys,<br>
          trackpad, and system gestures while you wipe your Mac.</p>
+
+      <div class="mac mac--a" id="mac" role="img"
+           aria-label="CleanPause on a MacBook: accidental gibberish while wiping, then Start Cleaning Mode in the menu bar, then the black Don't React screen, then Okay, I'm back.">
+        <div class="mac-screen">
+          <div class="mac-view">
+            <div class="mv-day" aria-hidden="true"></div>
+            <div class="mv-pass" aria-hidden="true">
+              <span class="mv-pass-label">PASSWORD</span>
+              <span class="mv-pass-text" id="mv-pass-text"></span>
+              <span class="mv-pass-err">Incorrect password.</span>
+            </div>
+            <div class="mv-menu" aria-hidden="true">
+              <span class="active">Start Cleaning Mode</span>
+              <span>Try for 6 Seconds…</span>
+              <span>Quit CleanPause</span>
+            </div>
+            <div class="mv-black" aria-hidden="true">
+              <div class="mv-black-copy">
+                <strong>DON'T REACT.</strong>
+                <em>I'm just cleaning you.</em>
+              </div>
+              <svg class="mv-ring" viewBox="0 0 30 30" aria-hidden="true">
+                <circle cx="15" cy="15" r="13" fill="none" stroke="rgba(243,231,212,.3)" stroke-width="1.2"/>
+                <circle class="mv-ring-arc" cx="15" cy="15" r="13" fill="none" stroke="#dceb55" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="mv-toast" aria-hidden="true"><span>Okay. I'm back.</span></div>
+            <div class="mac-menubar" aria-hidden="true">
+              <span class="mb-left">File&ensp;Edit&ensp;View&ensp;Window</span>
+              <span class="mb-right">
+                <svg viewBox="0 0 14 14" width="9" height="9" aria-hidden="true">
+                  <circle cx="7" cy="7" r="5.4" fill="none" stroke="#f3e7d4" stroke-opacity=".85" stroke-width="1.4"/>
+                  <path d="M7 1.6 a5.4 5.4 0 0 1 5.4 5.4" fill="none" stroke="#dceb55" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+                <span>4:08 PM</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="mac-base"></div>
+      </div>
+
       <div class="hero-foot">
         <div class="steps" aria-label="How it works">
           <span>START FROM THE MENU BAR</span><i aria-hidden="true"></i>
           <span>WIPE</span><i aria-hidden="true"></i>
           <span>HOLD THE RING · 3 SECONDS</span>
         </div>
-        <span>SCROLL INTO THE EVENING ↓</span>
       </div>
     </section>
 
@@ -146,6 +187,7 @@
       <div class="dusk-wash" aria-hidden="true"></div>
       <div class="sun-remnant" aria-hidden="true"></div>
       <div class="download-copy">
+        <img class="dl-icon" src="assets/app-icon.png" alt="" width="64" height="64">
         <p class="kicker">FREE FOR MAC</p>
         <h2>Three quiet seconds<br>to come back.</h2>
         <a class="download-button" href="downloads/CleanPause-0.1.0-preview.dmg" download>
@@ -159,7 +201,7 @@
              On macOS 15 or later: open it once, let macOS block it, then
              System Settings → Privacy &amp; Security → Open Anyway.
              It needs Accessibility permission to pause input, and nothing else.</p>
-          <span class="sha">SHA-256&ensp;5df25ea69a5ec76e25b4056b50998dc6e29c0f33891c03a91a12c31e59a0518e</span>
+          <span class="sha">SHA-256&ensp;6d417ba910252f3db2782c8ca68bfea15c04dadd7a82662bd89202d1f66f2fee</span>
         </div>
       </div>
       <p class="unnecessary">If it helped, make something unnecessary<br>on <a href="side-court/">side court</a> this week.</p>
