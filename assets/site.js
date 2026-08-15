@@ -32,13 +32,20 @@
       timeEl.textContent = current.dataset.time;
     }
 
-    /* The pause: text settles in, holds, then leaves a truly quiet screen. */
+    /* The pause, in two beats: the menu-bar click, then the product's
+       screen — which finally leaves a truly quiet stretch of black. */
     if (black) {
       const p = (window.scrollY - black.offsetTop + vh * 0.5) /
         Math.max(1, black.offsetHeight);
-      let quiet = 1;
-      if (p < 0.1) quiet = Math.max(0, p / 0.1);
-      else if (p > 0.45) quiet = Math.max(0, 1 - (p - 0.45) / 0.16);
+      let moment = 0;
+      if (p >= 0.04 && p < 0.1) moment = (p - 0.04) / 0.06;
+      else if (p >= 0.1 && p < 0.26) moment = 1;
+      else if (p >= 0.26 && p < 0.32) moment = 1 - (p - 0.26) / 0.06;
+      let quiet = 0;
+      if (p >= 0.36 && p < 0.44) quiet = (p - 0.36) / 0.08;
+      else if (p >= 0.44 && p < 0.62) quiet = 1;
+      else if (p >= 0.62 && p < 0.74) quiet = 1 - (p - 0.62) / 0.12;
+      black.style.setProperty("--moment", moment.toFixed(3));
       black.style.setProperty("--quiet", quiet.toFixed(3));
     }
   };
