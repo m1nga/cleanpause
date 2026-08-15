@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://m1nga.github.io/cleanpause/sitemap.xml
