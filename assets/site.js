@@ -17,10 +17,15 @@
     for (const scene of scenes) {
       const top = scene.offsetTop;
       if (top <= focus) current = scene;
-      if (!reduced) {
+      /* only animate scenes near the viewport; skip the rest entirely */
+      if (!reduced && top < window.scrollY + vh * 1.5 &&
+          top + scene.offsetHeight > window.scrollY - vh * 0.5) {
         const local = (focus - top) / Math.max(1, scene.offsetHeight);
-        const drift = Math.max(-1, Math.min(1, local - 0.5)) * -34;
-        scene.style.setProperty("--drift", `${drift.toFixed(1)}px`);
+        const drift = Math.round(Math.max(-1, Math.min(1, local - 0.5)) * -34);
+        if (scene._drift !== drift) {
+          scene._drift = drift;
+          scene.style.setProperty("--drift", `${drift}px`);
+        }
       }
     }
     if (timeEl && current.dataset.time !== timeEl.textContent) {
@@ -33,13 +38,20 @@
         Math.max(1, black.offsetHeight);
       let quiet = 1;
       if (p < 0.1) quiet = Math.max(0, p / 0.1);
-      else if (p > 0.42) quiet = Math.max(0, 1 - (p - 0.42) / 0.16);
+      else if (p > 0.45) quiet = Math.max(0, 1 - (p - 0.45) / 0.16);
       black.style.setProperty("--quiet", quiet.toFixed(3));
     }
   };
 
-  addEventListener("scroll", update, { passive: true });
-  addEventListener("resize", update, { passive: true });
+  /* coalesce scroll events into one style pass per frame */
+  let ticking = false;
+  const requestUpdate = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { ticking = false; update(); });
+  };
+  addEventListener("scroll", requestUpdate, { passive: true });
+  addEventListener("resize", requestUpdate, { passive: true });
   update();
 
   /* Accidental keystrokes, replayed once, briefly. */

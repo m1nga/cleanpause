@@ -166,11 +166,12 @@ button:focus-visible {
   text-shadow: 0 1px 1px rgba(18,12,18,.18), 0 8px 30px rgba(18,12,18,.12);
 }
 
-/* film grain */
-.scene::after {
+/* film grain — one fixed compositor layer for the whole page,
+   instead of one blend layer per scene (large GPU win, identical look) */
+body::after {
   content: "";
-  position: absolute;
-  z-index: 20;
+  position: fixed;
+  z-index: 40;
   inset: 0;
   pointer-events: none;
   opacity: .13;
@@ -222,6 +223,23 @@ button:focus-visible {
   font-weight: 500;
 }
 .s-four h1 em { font-size: 1.04em; letter-spacing: -.045em; }
+
+.hero-sub {
+  position: relative;
+  z-index: 3;
+  margin-top: 30px;
+  font-size: clamp(14px, 1.35vw, 17px);
+  line-height: 1.6;
+}
+.hero-sub::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -30px -60px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(76,32,62,.44) 0%, rgba(76,32,62,.16) 58%, transparent 100%);
+  filter: blur(16px);
+}
 
 .sun {
   position: absolute;
@@ -281,6 +299,17 @@ button:focus-visible {
   filter: blur(12px);
 }
 .hero-foot span { font-size: 9px; font-weight: 600; letter-spacing: .13em; }
+.steps {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.steps i {
+  width: 34px;
+  height: 1px;
+  background: rgba(243,231,210,.44);
+}
 
 /* ---------- scene 2 · 4:52 PM · the familiar part ---------- */
 
@@ -361,7 +390,7 @@ button:focus-visible {
 /* ---------- scene 3 · 5:37 PM · the pause (extended quiet) ---------- */
 
 .s-black {
-  min-height: 210svh;
+  min-height: 150svh;
   padding: 0;
   background:
     radial-gradient(ellipse 88% 14% at 52% 0%, rgba(76,32,62,.92) 0%, rgba(27,11,25,.72) 48%, transparent 94%),
@@ -422,7 +451,7 @@ button:focus-visible {
 /* ---------- scene 4 · 6:26 PM · back ---------- */
 
 .s-six {
-  min-height: 110svh;
+  min-height: 100svh;
   background:
     radial-gradient(ellipse 85% 42% at 92% 22%, rgba(164,80,110,.72) 0%, rgba(115,81,160,.52) 48%, transparent 86%),
     radial-gradient(ellipse 70% 44% at 24% 54%, rgba(115,81,160,.74) 0%, rgba(111,91,120,.52) 55%, transparent 88%),
@@ -445,13 +474,19 @@ button:focus-visible {
   bottom: calc(var(--rail-h) + 4%);
 }
 .product-lockup h2 {
-  margin: 22px 0 38px;
+  margin: 22px 0 26px;
   font-size: clamp(47px, 7.5vw, 98px);
   line-height: .87;
   letter-spacing: -.06em;
   font-weight: 500;
 }
 .product-lockup h2 em { font-size: 1.04em; }
+.how {
+  margin-bottom: 34px;
+  font-size: clamp(13px, 1.2vw, 15px);
+  line-height: 1.6;
+  max-width: 520px;
+}
 .facts {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -509,7 +544,7 @@ button:focus-visible {
 /* ---------- scene 5 · 7:18 PM · download ---------- */
 
 .s-seven {
-  min-height: 112svh;
+  min-height: 102svh;
   background:
     radial-gradient(ellipse 78% 43% at 17% 18%, rgba(78,105,94,.86) 0%, rgba(64,95,85,.52) 48%, transparent 84%),
     radial-gradient(ellipse 68% 48% at 72% 28%, rgba(115,80,109,.72) 0%, rgba(90,66,108,.46) 50%, transparent 86%),
@@ -572,18 +607,17 @@ button:focus-visible {
   display: flex;
   justify-content: space-between;
   gap: 40px;
-  background: rgba(76,32,62,.66);
+  background: rgba(76,32,62,.8);
   font-size: 10px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: .12em;
   text-decoration: none;
   box-shadow: 0 12px 42px rgba(18,12,18,.14);
-  backdrop-filter: blur(10px);
   transition: background .35s ease, border-color .35s ease;
 }
 .download-button:hover {
-  background: rgba(76,32,62,.88);
+  background: rgba(76,32,62,.95);
   border-color: rgba(243,231,212,.55);
 }
 .download-meta {
@@ -634,7 +668,7 @@ button:focus-visible {
 /* ---------- scene 6 · 8:00 PM · the other court ---------- */
 
 .s-eight {
-  min-height: 112svh;
+  min-height: 102svh;
   background:
     radial-gradient(ellipse 72% 44% at 18% 14%, rgba(48,67,59,.6) 0%, rgba(25,40,34,.4) 56%, transparent 91%),
     radial-gradient(ellipse 74% 56% at 82% 51%, rgba(80,51,77,.48) 0%, rgba(35,29,42,.42) 56%, transparent 93%),
@@ -904,6 +938,11 @@ a.sidecourt-head { text-decoration: none; }
   .s-seven { min-height: 145svh; }
   .download-copy h2 { font-size: clamp(38px, 5vw, 64px); }
   .product-lockup h2 { font-size: clamp(40px, 6vw, 76px); }
+  .s-eight { min-height: 140svh; }
+  .s-eight .drop-card { bottom: auto; top: 42%; }
+  .sc-open { min-height: 155svh; }
+  .sc-court { min-height: 135svh; }
+  .sidecourt-head { font-size: clamp(56px, 10vw, 130px); }
 }
 
 /* ---------- mobile ---------- */
@@ -920,10 +959,15 @@ a.sidecourt-head { text-decoration: none; }
 
   .scene { padding: 82px 22px 42px; }
 
-  .s-four h1 { margin-top: 14vh; font-size: clamp(47px, 15vw, 72px); }
+  .s-four h1 { margin-top: 12vh; font-size: clamp(47px, 15vw, 72px); }
   .sun { right: -28%; top: 22%; width: 78vw; }
+  .hero-sub { margin-top: 22px; }
+  .hero-sub br { display: none; }
   .hero-foot { bottom: calc(var(--rail-h) + 18px); }
-  .hero-foot span { display: none; }
+  .hero-foot > span { display: none; }
+  .steps { gap: 10px; }
+  .steps span { font-size: 8px; }
+  .steps i { width: 18px; }
 
   .password { left: 22px; right: 22px; top: 38%; overflow-wrap: anywhere; }
   .password span { font-size: 45px; }
