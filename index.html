@@ -75,22 +75,33 @@
       <div class="clay clay-one" aria-hidden="true"></div>
       <div class="clay clay-two" aria-hidden="true"></div>
       <div class="clay-shadow" aria-hidden="true"></div>
-      <p class="kicker">THE FAMILIAR PART</p>
-      <div class="password" id="password" role="img" aria-label="Accidental keystrokes while wiping the keyboard: gibberish typed into a password field, rejected as incorrect">
+      <p class="kicker">CLEANING WITHOUT CLEANPAUSE</p>
+      <div class="password" id="password" role="img" aria-label="Cleaning without CleanPause: gibberish typed into a password field, volume jumping, Siri waking up">
         <span id="password-text" data-text="fjdklsajflkdsafklj"></span>
         <small>Incorrect password.</small>
+        <span class="mishaps" aria-hidden="true">
+          <span>VOLUME → 100%</span>
+          <span>SIRI IS LISTENING</span>
+          <span>MISSION CONTROL, AGAIN</span>
+        </span>
       </div>
       <p class="side-copy">You were just trying<br>to clean your keyboard.</p>
     </section>
 
     <section class="scene s-black" data-time="5:37 PM" id="black-scene">
       <div class="black-hold">
+        <p class="mode-tag">CLEANPAUSE · CLEANING MODE</p>
         <div class="clean-state">
           <h2>DON'T REACT.</h2>
           <p>I'm just cleaning you.</p>
         </div>
-        <div class="unlock" aria-hidden="true"><span></span></div>
-        <small class="black-note">HOLD FOR 3 SECONDS TO RETURN</small>
+        <button class="unlock" id="unlock" aria-label="Press and hold for three seconds to return, exactly like in the app">
+          <svg viewBox="0 0 56 56" aria-hidden="true">
+            <circle class="u-base" cx="28" cy="28" r="26.5"></circle>
+            <circle class="u-arc" id="unlock-arc" cx="28" cy="28" r="26.5"></circle>
+          </svg>
+        </button>
+        <small class="black-note" id="black-note">THIS IS THE APP · PRESS AND HOLD</small>
       </div>
     </section>
 
@@ -131,7 +142,7 @@
              On macOS 15 or later: open it once, let macOS block it, then
              System Settings → Privacy &amp; Security → Open Anyway.
              It needs Accessibility permission to pause input, and nothing else.</p>
-          <span class="sha">SHA-256&ensp;106db049030acd931ea7372800977895b8afc1ba1243192f260717ae2831d63a</span>
+          <span class="sha">SHA-256&ensp;5df25ea69a5ec76e25b4056b50998dc6e29c0f33891c03a91a12c31e59a0518e</span>
         </div>
       </div>
       <p class="unnecessary">If it helped, make something unnecessary<br>on <a href="side-court/">side court</a> this week.</p>
@@ -147,6 +158,10 @@
       <a class="drop-card" href="side-court/">
         <span class="drop-black" aria-hidden="true"><span>DON'T<br>REACT.</span></span>
         <p><small>DROP</small>CLEANPAUSE<br><em>by m1nga</em></p>
+      </a>
+      <a class="qr" href="side-court/" tabindex="-1" aria-hidden="true">
+        <img src="assets/qr-court.svg" alt="" width="68" height="68">
+        <span>SCAN IN</span>
       </a>
       <footer class="court-foot">
         <p>Keep something yours.</p>

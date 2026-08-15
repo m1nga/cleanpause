@@ -54,6 +54,50 @@
   addEventListener("resize", requestUpdate, { passive: true });
   update();
 
+  /* The ring works here too: press and hold three seconds, come back. */
+  const unlock = document.getElementById("unlock");
+  const note = document.getElementById("black-note");
+  if (unlock) {
+    const noteText = note ? note.textContent : "";
+    let holdTimer = null;
+    const finish = () => {
+      holdTimer = null;
+      unlock.classList.remove("holding");
+      unlock.classList.add("done");
+      if (note) note.textContent = "OKAY. YOU'RE BACK.";
+      const target = document.getElementById("s4");
+      setTimeout(() => {
+        if (target) target.scrollIntoView({ behavior: reduced ? "auto" : "smooth" });
+        setTimeout(() => {
+          unlock.classList.remove("done");
+          if (note) note.textContent = noteText;
+        }, 1200);
+      }, 350);
+    };
+    const start = (e) => {
+      if (holdTimer || unlock.classList.contains("done")) return;
+      if (e.cancelable) e.preventDefault();
+      unlock.classList.add("holding");
+      holdTimer = setTimeout(finish, 3000);
+    };
+    const cancel = () => {
+      if (!holdTimer) return;
+      clearTimeout(holdTimer);
+      holdTimer = null;
+      unlock.classList.remove("holding");
+    };
+    unlock.addEventListener("pointerdown", start);
+    unlock.addEventListener("pointerup", cancel);
+    unlock.addEventListener("pointerleave", cancel);
+    unlock.addEventListener("pointercancel", cancel);
+    unlock.addEventListener("contextmenu", (e) => e.preventDefault());
+    unlock.addEventListener("keydown", (e) => {
+      if ((e.key === " " || e.key === "Enter") && !e.repeat) start(e);
+    });
+    unlock.addEventListener("keyup", cancel);
+    unlock.addEventListener("blur", cancel);
+  }
+
   /* Accidental keystrokes, replayed once, briefly. */
   const passwordText = document.getElementById("password-text");
   if (passwordText) {
