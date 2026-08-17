@@ -1,25 +1,25 @@
 <!doctype html>
-<html lang="en" data-court="clean">
+<html lang="en" data-court="side">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CleanPause — Clean your Mac. Let nothing happen.</title>
-  <meta name="description" content="A free macOS menu-bar switch that pauses your keyboard, media keys, trackpad, and system gestures while you clean. Hold three seconds to come back. A SIDE COURT drop by m1nga.">
+  <title>SIDE COURT — Keep something yours.</title>
+  <meta name="description" content="SIDE COURT is a place for the thing you keep for yourself: small, unnecessary, finished side projects, dropped one at a time. Current drop: CleanPause, a free cleaning mode for Mac.">
   <link rel="canonical" href="https://m1nga.github.io/cleanpause/">
-  <meta name="theme-color" content="#f7e5c4">
+  <meta name="theme-color" content="#181918">
 
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="CleanPause">
-  <meta property="og:title" content="CleanPause — Clean your Mac. Let nothing happen.">
-  <meta property="og:description" content="A free macOS switch that pauses keyboard, media keys, trackpad, and gestures while you clean. Hold three seconds to come back.">
+  <meta property="og:site_name" content="SIDE COURT">
+  <meta property="og:title" content="SIDE COURT — Keep something yours.">
+  <meta property="og:description" content="A place for side projects, dropped one at a time. Current drop: CleanPause, free for Mac.">
   <meta property="og:url" content="https://m1nga.github.io/cleanpause/">
-  <meta property="og:image" content="https://m1nga.github.io/cleanpause/assets/og.jpg">
+  <meta property="og:image" content="https://m1nga.github.io/cleanpause/assets/og-night.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CleanPause — Clean your Mac. Let nothing happen.">
-  <meta name="twitter:description" content="A free macOS switch that pauses keyboard, media keys, trackpad, and gestures while you clean.">
-  <meta name="twitter:image" content="https://m1nga.github.io/cleanpause/assets/og.jpg">
+  <meta name="twitter:title" content="SIDE COURT — Keep something yours.">
+  <meta name="twitter:description" content="A place for side projects, dropped one at a time. Current drop: CleanPause, free for Mac.">
+  <meta name="twitter:image" content="https://m1nga.github.io/cleanpause/assets/og-night.jpg">
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -28,211 +28,116 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Newsreader:ital,opsz,wght@1,6..72,300&display=swap">
   <link rel="stylesheet" href="assets/site.css">
-  <link rel="prefetch" href="side-court/">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "CleanPause",
-    "operatingSystem": "macOS 13.0 or later",
-    "applicationCategory": "UtilitiesApplication",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "author": { "@type": "Person", "name": "m1nga" },
-    "softwareVersion": "0.1.0-preview",
-    "downloadUrl": "https://m1nga.github.io/cleanpause/downloads/CleanPause-0.1.0-preview.dmg"
-  }
-  </script>
+  <link rel="prefetch" href="drops/cleanpause/">
 </head>
 <body>
 
   <header class="topbar">
-    <a href="./">CLEANPAUSE</a>
-    <span class="time"><i></i><span id="time-value">4:08 PM</span></span>
-    <a class="credit" href="side-court/">A SIDE COURT DROP</a>
+    <a href="./">SIDE COURT</a>
+    <span class="time"><i></i><span id="time-value">8:41 PM</span></span>
+    <a class="credit" href="kit/">THE KIT</a>
   </header>
 
   <main>
-    <section class="scene s-four" id="s1" data-time="4:08 PM">
-      <div class="sun" aria-hidden="true"></div>
-      <div class="earth earth-one" aria-hidden="true"></div>
-      <div class="earth earth-two" aria-hidden="true"></div>
-      <p class="kicker">A CLEANING MODE FOR MAC · FREE</p>
-      <h1>Clean your Mac.<br><em>Let nothing happen.</em></h1>
-      <p class="hero-sub">CleanPause temporarily freezes the keyboard, media keys,<br>
-         trackpad, and system gestures while you wipe your Mac.</p>
-
-      <div class="mac mac--a" id="mac" role="img"
-           aria-label="CleanPause on a MacBook: accidental gibberish while wiping, then Start Cleaning Mode in the menu bar, then the black Don't React screen, then Okay, I'm back.">
-        <div class="mac-screen">
-          <div class="mac-view">
-            <div class="mv-day" aria-hidden="true"></div>
-            <div class="mv-pass" aria-hidden="true">
-              <span class="mv-pass-label">PASSWORD</span>
-              <span class="mv-pass-text" id="mv-pass-text"></span>
-              <span class="mv-pass-err">Incorrect password.</span>
-            </div>
-            <div class="mv-menu" aria-hidden="true">
-              <span class="active">Start Cleaning Mode</span>
-              <span>Try for 6 Seconds…</span>
-              <span>Quit CleanPause</span>
-            </div>
-            <div class="mv-black" aria-hidden="true">
-              <div class="mv-black-copy">
-                <strong>DON'T REACT.</strong>
-                <em>I'm just cleaning you.</em>
-              </div>
-              <svg class="mv-ring" viewBox="0 0 30 30" aria-hidden="true">
-                <circle cx="15" cy="15" r="13" fill="none" stroke="rgba(243,231,212,.3)" stroke-width="1.2"/>
-                <circle class="mv-ring-arc" cx="15" cy="15" r="13" fill="none" stroke="#dceb55" stroke-width="1.6" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div class="mv-toast" aria-hidden="true"><span>Okay. I'm back.</span></div>
-            <div class="mac-menubar" aria-hidden="true">
-              <span class="mb-left">File&ensp;Edit&ensp;View&ensp;Window</span>
-              <span class="mb-right">
-                <svg viewBox="0 0 14 14" width="9" height="9" aria-hidden="true">
-                  <circle cx="7" cy="7" r="5.4" fill="none" stroke="#f3e7d4" stroke-opacity=".85" stroke-width="1.4"/>
-                  <path d="M7 1.6 a5.4 5.4 0 0 1 5.4 5.4" fill="none" stroke="#dceb55" stroke-width="1.4" stroke-linecap="round"/>
-                </svg>
-                <span>4:08 PM</span>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="mac-base"></div>
-      </div>
-
-      <div class="hero-foot">
-        <div class="steps" aria-label="How it works">
-          <span>START FROM THE MENU BAR</span><i aria-hidden="true"></i>
-          <span>WIPE</span><i aria-hidden="true"></i>
-          <span>HOLD THE RING · 3 SECONDS</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="scene s-five" id="s2" data-time="4:52 PM">
-      <div class="clay clay-one" aria-hidden="true"></div>
-      <div class="clay clay-two" aria-hidden="true"></div>
-      <div class="clay-shadow" aria-hidden="true"></div>
-      <p class="kicker">CLEANING WITHOUT CLEANPAUSE</p>
-      <div class="password" id="password" role="img" aria-label="Cleaning without CleanPause: gibberish typed into a password field, volume jumping, Siri waking up">
-        <span id="password-text" data-text="fjdklsajflkdsafklj"></span>
-        <small>Incorrect password.</small>
-        <span class="mishaps" aria-hidden="true">
-          <span>VOLUME → 100%</span>
-          <span>SIRI IS LISTENING</span>
-          <span>MISSION CONTROL, AGAIN</span>
-        </span>
-      </div>
-      <p class="side-copy">You were just trying<br>to clean your keyboard.</p>
-    </section>
-
-    <section class="scene s-black" data-time="5:37 PM" id="black-scene">
-      <div class="black-hold">
-        <p class="mode-tag">CLEANPAUSE · CLEANING MODE</p>
-        <div class="menu-moment" aria-hidden="true">
-          <p class="kicker">THE FIX LIVES IN YOUR MENU BAR</p>
-          <div class="menubar">
-            <svg viewBox="0 0 14 14" width="12" height="12" aria-hidden="true">
-              <circle cx="7" cy="7" r="5.4" fill="none" stroke="#f3e7d4" stroke-opacity=".85" stroke-width="1.3"/>
-              <path d="M7 1.6 a5.4 5.4 0 0 1 5.4 5.4" fill="none" stroke="#dceb55" stroke-width="1.3" stroke-linecap="round"/>
-            </svg>
-            <span>CLEANPAUSE</span>
-            <span class="mb-time">5:37 PM</span>
-          </div>
-          <div class="menu-drop">
-            <span class="active">Start Cleaning Mode</span>
-            <span>Try for 6 Seconds…</span>
-            <span>Quit CleanPause</span>
-          </div>
-          <p class="menu-cap">One click. Every screen goes dark.</p>
-        </div>
-        <div class="clean-state">
-          <h2>DON'T REACT.</h2>
-          <p>I'm just cleaning you.</p>
-        </div>
-        <button class="unlock" id="unlock" aria-label="Press and hold for three seconds to return, exactly like in the app">
-          <svg viewBox="0 0 56 56" aria-hidden="true">
-            <circle class="u-base" cx="28" cy="28" r="26.5"></circle>
-            <circle class="u-arc" id="unlock-arc" cx="28" cy="28" r="26.5"></circle>
-          </svg>
-        </button>
-        <small class="black-note" id="black-note">THIS IS THE APP · PRESS AND HOLD</small>
-      </div>
-    </section>
-
-    <section class="scene s-six" id="s4" data-time="6:26 PM">
-      <div class="purple-sun" aria-hidden="true"></div>
-      <div class="earth-slope" aria-hidden="true"></div>
-      <div class="air-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-      <p class="return-line">Okay. I'm back.</p>
-      <div class="product-lockup">
-        <p class="kicker">CLEANPAUSE</p>
-        <h2>Everything stops.<br><em>You wipe.</em></h2>
-        <p class="how">Flip it on from the menu bar and every key, tap, and swipe
-           is ignored—on every screen. Scrub as hard as you like.
-           Press and hold the ring for three seconds and your Mac is listening again.</p>
-        <div class="facts" role="list" aria-label="What CleanPause pauses">
-          <span role="listitem">Keyboard</span>
-          <span role="listitem">Media keys</span>
-          <span role="listitem">Trackpad</span>
-          <span role="listitem">System gestures</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="scene s-seven" data-time="7:18 PM" id="download">
-      <div class="dusk-wash" aria-hidden="true"></div>
-      <div class="sun-remnant" aria-hidden="true"></div>
-      <div class="download-copy">
-        <img class="dl-icon" src="assets/app-icon.png" alt="" width="64" height="64">
-        <p class="kicker">FREE FOR MAC</p>
-        <h2>Three quiet seconds<br>to come back.</h2>
-        <a class="download-button" href="downloads/CleanPause-0.1.0-preview.dmg" download>
-          <span>DOWNLOAD FOR MAC</span><span aria-hidden="true">↘</span>
-        </a>
-        <span class="download-meta">macOS 13 or later · Apple silicon &amp; Intel · 0.5 MB · v0.1.0</span>
-        <div class="preview-note">
-          <p class="kicker">PREVIEW BUILD</p>
-          <p>Not yet notarized by Apple, so macOS will warn you the first time.
-             On macOS 13–14: right-click the app, then Open.
-             On macOS 15 or later: open it once, let macOS block it, then
-             System Settings → Privacy &amp; Security → Open Anyway.
-             It needs Accessibility permission to pause input, and nothing else.</p>
-          <span class="sha">SHA-256&ensp;6d417ba910252f3db2782c8ca68bfea15c04dadd7a82662bd89202d1f66f2fee</span>
-        </div>
-      </div>
-      <p class="unnecessary">If it helped, make something unnecessary<br>on <a href="side-court/">side court</a> this week.</p>
-    </section>
-
-    <section class="scene s-eight" id="s6" data-time="8:00 PM">
+    <section class="scene h-gate" data-time="8:41 PM">
       <div class="night-landscape" aria-hidden="true">
         <i class="night-layer night-one"></i><i class="night-layer night-two"></i><i class="night-layer night-three"></i>
       </div>
-      <a class="sidecourt-head" href="side-court/" aria-label="Enter SIDE COURT">
-        <span>SIDE</span><span>COURT</span>
-      </a>
-      <a class="drop-card" href="side-court/">
-        <span class="drop-black" aria-hidden="true"><span>DON'T<br>REACT.</span></span>
-        <p><small>DROP</small>CLEANPAUSE<br><em>by m1nga</em></p>
-      </a>
-      <a class="qr" href="side-court/" tabindex="-1" aria-hidden="true">
-        <img src="assets/qr-court.svg" alt="" width="68" height="68">
-        <span>SCAN IN</span>
-      </a>
-      <footer class="court-foot">
-        <p>Keep something yours.</p>
-        <a href="side-court/">THIS IS THE OTHER COURT →</a>
+      <div class="court-glow" aria-hidden="true"></div>
+      <h1 class="sidecourt-head">
+        <span>SIDE</span> <span>COURT</span>
+      </h1>
+      <div class="keep">
+        <h2>Keep something yours.</h2>
+        <p>At some point, your work starts carrying everyone else's needs.<br>
+           This is a place for the one thing that only has to be yours—<br>
+           small, unnecessary side projects, finished and dropped, one at a time.</p>
+      </div>
+      <p class="gate-foot">OPEN TONIGHT ↓</p>
+    </section>
+
+    <section class="scene h-drop" data-time="9:24 PM">
+      <p class="kicker">CURRENT DROP</p>
+      <div class="h-drop-inner">
+        <div class="h-drop-left">
+          <a class="drop-card" href="drops/cleanpause/" style="position:static">
+            <span class="drop-black" aria-hidden="true"><span>DON'T<br>REACT.</span></span>
+            <p><small>DROP</small>CLEANPAUSE<br><em>by m1nga</em></p>
+          </a>
+          <p class="blurb">A cleaning mode for Mac. One click freezes the keyboard,
+             trackpad, and media keys while you wipe; hold the ring three seconds
+             to come back. Free, universal, half a megabyte.</p>
+          <a class="enter-drop" href="drops/cleanpause/">
+            <span>ENTER THE DROP</span><span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <div class="mac mac--a" id="mac" role="img"
+             aria-label="CleanPause on a MacBook: accidental gibberish while wiping, then Start Cleaning Mode in the menu bar, then the black Don't React screen, then Okay, I'm back.">
+          <div class="mac-screen">
+            <div class="mac-view">
+              <div class="mv-day" aria-hidden="true"></div>
+              <div class="mv-pass" aria-hidden="true">
+                <span class="mv-pass-label">PASSWORD</span>
+                <span class="mv-pass-text" id="mv-pass-text"></span>
+                <span class="mv-pass-err">Incorrect password.</span>
+              </div>
+              <div class="mv-menu" aria-hidden="true">
+                <span class="active">Start Cleaning Mode</span>
+                <span>Try for 6 Seconds…</span>
+                <span>Quit CleanPause</span>
+              </div>
+              <div class="mv-black" aria-hidden="true">
+                <div class="mv-black-copy">
+                  <strong>DON'T REACT.</strong>
+                  <em>I'm just cleaning you.</em>
+                </div>
+                <svg class="mv-ring" viewBox="0 0 30 30" aria-hidden="true">
+                  <circle cx="15" cy="15" r="13" fill="none" stroke="rgba(243,231,212,.3)" stroke-width="1.2"/>
+                  <circle class="mv-ring-arc" cx="15" cy="15" r="13" fill="none" stroke="#dceb55" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="mv-toast" aria-hidden="true"><span>Okay. I'm back.</span></div>
+              <div class="mac-menubar" aria-hidden="true">
+                <span class="mb-left">File&ensp;Edit&ensp;View&ensp;Window</span>
+                <span class="mb-right">
+                  <svg viewBox="0 0 14 14" width="9" height="9" aria-hidden="true">
+                    <circle cx="7" cy="7" r="5.4" fill="none" stroke="#f3e7d4" stroke-opacity=".85" stroke-width="1.4"/>
+                    <path d="M7 1.6 a5.4 5.4 0 0 1 5.4 5.4" fill="none" stroke="#dceb55" stroke-width="1.4" stroke-linecap="round"/>
+                  </svg>
+                  <span>9:24 PM</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="mac-base"></div>
+        </div>
+      </div>
+      <a class="all-drops" href="drops/">ALL DROPS →</a>
+    </section>
+
+    <section class="scene h-court" data-time="10:15 PM">
+      <div class="sc-court-inner">
+        <p class="kicker">THE COURT IS OPEN</p>
+        <h2>What did you make recently that didn't need to exist—but you wanted to?</h2>
+        <p>It can be small. It doesn't have to become a startup,
+           or anything at all. If you're keeping something yours,
+           step onto the court.</p>
+        <a class="court-write" href="open-court/">
+          <span>OPEN COURT</span><span aria-hidden="true">→</span>
+        </a>
+        <span class="court-small">Real people, real things. No feed, no numbers.</span>
+      </div>
+      <footer class="sc-foot">
+        <a href="drops/cleanpause/">CLEANPAUSE — THE FIRST DROP</a>
+        <span>SIDE COURT · MMXXVI</span>
       </footer>
     </section>
   </main>
 
   <nav class="rail" aria-label="Site">
-    <a href="./" aria-current="page">CLEANPAUSE</a>
-    <span class="rule" aria-hidden="true"></span>
-    <a href="side-court/">SIDE COURT</a>
+    <a href="./" aria-current="page">SIDE COURT</a>
+    <a href="drops/">DROPS</a>
+    <a href="open-court/">OPEN COURT</a>
   </nav>
 
   <div class="progress" aria-hidden="true"><i id="progress-bar"></i></div>

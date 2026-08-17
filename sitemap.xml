@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://m1nga.github.io/cleanpause/</loc>
-    <lastmod>2026-08-15</lastmod>
-  </url>
-  <url>
-    <loc>https://m1nga.github.io/cleanpause/side-court/</loc>
-    <lastmod>2026-08-15</lastmod>
-  </url>
+  <url><loc>https://m1nga.github.io/cleanpause/</loc><lastmod>2026-08-17</lastmod></url>
+  <url><loc>https://m1nga.github.io/cleanpause/drops/</loc><lastmod>2026-08-17</lastmod></url>
+  <url><loc>https://m1nga.github.io/cleanpause/drops/cleanpause/</loc><lastmod>2026-08-17</lastmod></url>
+  <url><loc>https://m1nga.github.io/cleanpause/open-court/</loc><lastmod>2026-08-17</lastmod></url>
+  <url><loc>https://m1nga.github.io/cleanpause/kit/</loc><lastmod>2026-08-17</lastmod></url>
 </urlset>
